@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Login selesai · Belajar Yo!</title>
+  <link rel="icon" href="../favicon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <span class="chip">BELAJAR YO!</span>
+      <h1 id="title">Login selesai</h1>
+      <p id="msg">Salin alamat di bawah, lalu paste ke terminal yang menjalankan <code>post.py auth</code>.</p>
+      <code class="box" id="url"></code>
+      <button id="copy" type="button">Salin alamat</button>
+      <p class="muted">Halaman ini tidak mengirim apa pun ke mana pun. Kodenya cuma berlaku beberapa menit.</p>
+    </section>
+  </main>
+  <script>
+    // OAuth redirect target: show the full address so the creator can paste it into the terminal.
+    var url = location.href;
+    var params = new URLSearchParams(location.search);
+    document.getElementById("url").textContent = url;
+    if (params.get("error")) {
+      document.getElementById("title").textContent = "Login dibatalkan";
+      document.getElementById("msg").textContent = "Error: " + params.get("error") + ". Jalankan auth lagi.";
+    } else if (!params.get("code")) {
+      document.getElementById("title").textContent = "Belum ada kode";
+      document.getElementById("msg").textContent = "Halaman ini dibuka lewat login TikTok atau Google, bukan langsung.";
+    }
+    document.getElementById("copy").addEventListener("click", function () {
+      navigator.clipboard.writeText(url).then(function () {
+        document.getElementById("copy").textContent = "Tersalin ✓";
+      });
+    });
+  </script>
+</body>
+</html>

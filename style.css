@@ -1,0 +1,92 @@
+/* Belajar Yo! — Kertas style (same palette as Engine/src/lib/theme.ts KERTAS). Fonts are local: no third-party requests. */
+@font-face { font-family: "Jakarta"; src: url("fonts/plus-jakarta-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Jakarta"; src: url("fonts/plus-jakarta-sans-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Jakarta"; src: url("fonts/plus-jakarta-sans-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Caveat"; src: url("fonts/caveat-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --bg: #F2EADB;
+  --paper: #FBF7EF;
+  --ink: #2A2320;
+  --muted: #6B615A;
+  --oranye: #FF6A3D;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 17px/1.6 "Jakarta", system-ui, sans-serif;
+}
+a { color: var(--ink); text-decoration-color: var(--oranye); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--oranye); }
+
+.wrap { max-width: 680px; margin: 0 auto; padding: 40px 16px 56px; }
+
+.card {
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: 6px 6px 0 var(--ink);
+  padding: 28px 24px;
+}
+
+.chip {
+  display: inline-block;
+  background: var(--oranye);
+  color: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 10px;
+  padding: 2px 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+}
+
+h1 { font-weight: 800; font-size: 34px; line-height: 1.15; margin: 14px 0 6px; }
+h2 { font-weight: 800; font-size: 21px; margin: 28px 0 6px; }
+.hand { font-family: "Caveat", cursive; font-size: 26px; color: var(--oranye); }
+.muted { color: var(--muted); font-size: 15px; }
+
+.hero { text-align: center; }
+.hero img { width: 128px; height: 128px; border-radius: 50%; border: 3px solid var(--ink); }
+
+.links { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+.links a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.links a:hover { background: var(--oranye); color: var(--paper); }
+
+button {
+  font: 700 16px "Jakarta", system-ui, sans-serif;
+  background: var(--oranye);
+  color: var(--paper);
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  padding: 12px 18px;
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
+}
+code.box {
+  display: block;
+  background: var(--bg);
+  border: 2px dashed var(--ink);
+  border-radius: 10px;
+  padding: 12px;
+  word-break: break-all;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+footer { text-align: center; margin-top: 32px; font-size: 14px; color: var(--muted); }
+footer a { color: var(--muted); }
